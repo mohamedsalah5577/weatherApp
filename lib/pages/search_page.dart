@@ -5,7 +5,6 @@ import 'package:weather_app/services/weather_service.dart';
 
 import '../provider/weather_provider.dart';
 
-
 class SearchPage extends StatelessWidget {
   String? cityName;
 
@@ -31,18 +30,12 @@ class SearchPage extends StatelessWidget {
               WeatherService service = WeatherService();
               WeatherModel weather =
                   await service.getWeather(cityName: cityName!);
-              // print(weather.temp);
 
-              // access data on provider to object :
-              // Provider.of<WeatherModel>(context).date = weather.date;
-              // listen >> tell this page by chang the data
               Provider.of<WeatherProvider>(context, listen: false).weatherData =
                   weather;
               Navigator.pop(context);
             },
             decoration: InputDecoration(
-              // استحدمه لما اكون التطبيق عرب انجليزي
-              // contentPadding: EdgeInsetsDirectional.all(27),
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 18, vertical: 25),
               label: Text('search'),

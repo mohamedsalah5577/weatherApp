@@ -11,8 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // listen >> tell this page by chang the data >> work update for home_page
-    // listen:true >> by default
+
     weatherData = Provider.of<WeatherProvider>(context, /* listen:true*/).weatherData as WeatherModel?;
     return Scaffold(
       appBar: AppBar(
@@ -52,18 +51,7 @@ class HomePage extends StatelessWidget {
                       fontSize: 28,
                     ),
                   ),
-                  // Text(
-                  //   'there is no weather 😔 start',
-                  //   style: TextStyle(
-                  //     fontSize: 28,
-                  //   ),
-                  // ),
-                  // Text(
-                  //   'searching now 🔍',
-                  //   style: TextStyle(
-                  //     fontSize: 28,
-                  //   ),
-                  // ),
+
                 ],
               ),
             )
@@ -94,9 +82,7 @@ class HomePage extends StatelessWidget {
                       Image.asset('assets/images/clear.png'),
                       Text(
                         weatherData!.weatherStatName,
-                        // weatherData?.weatherStatName ??'', // ??'' >> if this data null >> skip and showing empty space
-                        //body: weatherData == null << ما استعماتها بسسب انا عامل حسابي انها مش هتاخد قيمه فاضيه والا مش هيفتح
-                        // 'Cairo',
+
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
